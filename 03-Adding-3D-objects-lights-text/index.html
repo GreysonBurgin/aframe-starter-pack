@@ -5,11 +5,34 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+    <!-- Snowman grouped at 0 0 -5 using only primitive shapes -->
+    <a-entity id="snowman" position="0 0 -5">
+      <!-- Body: 3 stacked white spheres (bottom, middle, head) -->
+      <a-sphere position="0 0.90 0" radius="0.90" color="#FFFFFF"></a-sphere>
+      <a-sphere position="0 1.60 0" radius="0.60" color="#FFFFFF"></a-sphere>
+      <a-sphere position="0 2.15 0" radius="0.45" color="#FFFFFF"></a-sphere>
+
+      <!-- Eyes (small black spheres) -->
+      <a-sphere position="-0.12 2.25 0.34" radius="0.06" color="#000000"></a-sphere>
+      <a-sphere position="0.12 2.25 0.34" radius="0.06" color="#000000"></a-sphere>
+
+      <!-- Carrot nose (orange cone pointing toward the camera, +Z) -->
+      <a-cone position="0 2.15 0.48" radius-bottom="0.10" height="0.50" color="#FF8C00" rotation="-90 0 0"></a-cone>
+
+      <!-- Buttons (black spheres) -->
+      <a-sphere position="0 1.60 0.58" radius="0.07" color="#000000"></a-sphere>
+      <a-sphere position="0 1.35 0.58" radius="0.07" color="#000000"></a-sphere>
+      <a-sphere position="0 1.10 0.58" radius="0.07" color="#000000"></a-sphere>
+
+      <!-- Hat (black cylinder) -->
+      <a-cylinder position="0 2.60 0" radius="0.40" height="0.50" color="#000000"></a-cylinder>
+
+      <!-- Stick arms (brown cylinders) -->
+      <a-cylinder position="-0.95 1.60 0" radius="0.05" height="1.20" color="#8B4513" rotation="0 0 45"></a-cylinder>
+      <a-cylinder position="0.95 1.60 0" radius="0.05" height="1.20" color="#8B4513" rotation="0 0 -45"></a-cylinder>
+    </a-entity>
+
+    <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
